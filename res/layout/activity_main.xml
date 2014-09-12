@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <Button
+        android:id="@+id/button_down"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:text="DOWN" />
+
+    <Button
+        android:id="@+id/button_up"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_down"
+        android:layout_alignLeft="@+id/button_down"
+        android:text="UP" />
+
+    <Button
+        android:id="@+id/button_right"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_up"
+        android:layout_toRightOf="@+id/button_down"
+        android:text="RIGHT" />
+
+    <Button
+        android:id="@+id/button_left"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_up"
+        android:layout_toLeftOf="@+id/button_down"
+        android:text="LEFT" />
+
+    <Button
+        android:id="@+id/button_stop"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_left"
+        android:layout_alignBottom="@+id/button_left"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/button_left"
+        android:text="Stop" />
+
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_up"
+        android:layout_alignBottom="@+id/button_up"
+        android:layout_alignLeft="@+id/button_stop"
+        android:text="Start"
+        android:onClick="startBtn" />
+
+    <Button
+        android:id="@+id/button_f2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_right"
+        android:layout_alignParentRight="true"
+        android:text="F2" />
+
+    <Button
+        android:id="@+id/button_f1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_f2"
+        android:layout_alignBottom="@+id/button_f2"
+        android:layout_toLeftOf="@+id/button_f2"
+        android:text="F1" />
+
+    <Button
+        android:id="@+id/button_conf"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_right"
+        android:layout_alignBottom="@+id/button_right"
+        android:layout_alignParentRight="true"
+        android:text="Configure" />
+
+    <com.example.mdptool.Maze
+        android:id="@+id/maze"
+        android:layout_width="600dp"
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true" />
+
+</RelativeLayout>
