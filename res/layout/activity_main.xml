@@ -81,7 +81,8 @@
         android:layout_alignBaseline="@+id/button_right"
         android:layout_alignBottom="@+id/button_right"
         android:layout_alignParentRight="true"
-        android:text="Configure" />
+        android:text="Configure"
+        android:onClick="startPreferencePage" />
 
     <com.example.mdptool.Maze
         android:id="@+id/maze"

@@ -76,4 +76,8 @@ public class MainActivity extends Activity {
 	public void startBtn(View view){
 		myMaze.startMaze();
 	}
+	public void startPreferencePage(View view){
+		Intent newIntent = new Intent(this, PreferencePage.class);
+        this.startActivity(newIntent);
+	}
 }

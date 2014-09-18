@@ -14,7 +14,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_connect=0x7f070010;
+        public static final int action_connect=0x7f070013;
         public static final int button_conf=0x7f07000d;
         public static final int button_down=0x7f070005;
         public static final int button_f1=0x7f07000c;
@@ -25,9 +25,12 @@ public final class R {
         public static final int button_start=0x7f07000a;
         public static final int button_stop=0x7f070009;
         public static final int button_up=0x7f070006;
-        public static final int label=0x7f07000f;
+        public static final int editText_F1=0x7f07000f;
+        public static final int editText_F2=0x7f070010;
+        public static final int label=0x7f070012;
         public static final int maze=0x7f07000e;
         public static final int pairedDevice=0x7f070001;
+        public static final int save=0x7f070011;
         public static final int scannedDevice=0x7f070003;
         public static final int textView1=0x7f070000;
         public static final int textView2=0x7f070002;
@@ -35,7 +38,8 @@ public final class R {
     public static final class layout {
         public static final int activity_bluetooth_service=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int layout_listview=0x7f030002;
+        public static final int activity_preference_page=0x7f030002;
+        public static final int layout_listview=0x7f030003;
     }
     public static final class menu {
         public static final int main_activity_actions=0x7f060000;
@@ -45,6 +49,7 @@ public final class R {
         public static final int app_name=0x7f040000;
         public static final int hello_world=0x7f040001;
         public static final int title_activity_bluetooth_service=0x7f040003;
+        public static final int title_activity_preference_page=0x7f040004;
     }
     public static final class style {
         /** 
