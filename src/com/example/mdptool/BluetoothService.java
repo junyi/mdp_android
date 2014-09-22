@@ -41,6 +41,11 @@ public class BluetoothService extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_bluetooth_service);
 		
+		//Configure listview for pairedDevices
+		final ListView listView = (ListView) findViewById(R.id.pairedDevice);
+		mPairedDeviceArrayAdapter = new ArrayAdapter<String>(this, R.layout.layout_listview,R.id.label);
+		listView.setAdapter(mPairedDeviceArrayAdapter);
+		
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 		if (mBluetoothAdapter == null) {
 			Toast.makeText(this, "Bluetooth is unavailable on this device.", Toast.LENGTH_SHORT).show();
@@ -58,13 +63,12 @@ public class BluetoothService extends Activity {
 			    	mPairedDeviceArrayAdapter.add(device.getName() + "\n" + device.getAddress());
 			    }
 			}
+			server = new BluetoothServerThread();
+			server.start();
 		}
 		
 		
-		//Configure listview for pairedDevices
-		final ListView listView = (ListView) findViewById(R.id.pairedDevice);
-		mPairedDeviceArrayAdapter = new ArrayAdapter<String>(this, R.layout.layout_listview,R.id.label);
-		listView.setAdapter(mPairedDeviceArrayAdapter);
+		
 
 		listView.setOnItemClickListener(new OnItemClickListener() {
 			   @Override

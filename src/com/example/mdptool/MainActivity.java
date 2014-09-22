@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -22,6 +23,7 @@ public class MainActivity extends Activity {
 	private static BluetoothSocket mSocket;
 	public static ConnectedThread ct;
 	public static Handler mHandler;
+	TextView receivedMsg;
 	
 	Maze myMaze;
 	SurfaceHolder holder;
@@ -30,13 +32,15 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		
+		receivedMsg = (TextView) findViewById(R.id.receivedMsg);
 		myMaze =(Maze) findViewById(R.id.maze);
 		mHandler = new Handler() {
 			public void handleMessage(Message msg) {
 			  switch (msg.what) {
 			     case MESSAGE_READ:	byte[] readBuf = (byte[]) msg.obj;
-			    	 				String string = new String(readBuf);
-			    	 				Log.d("bluetooth", string.toString());
+			    	 				String string = new String(readBuf,0,msg.arg1);
+			    	 				receivedMsg.setText(string);
 			     					break;
 			  }
 			}
@@ -79,5 +83,9 @@ public class MainActivity extends Activity {
 	public void startPreferencePage(View view){
 		Intent newIntent = new Intent(this, PreferencePage.class);
         this.startActivity(newIntent);
+	}
+	public void sendUp(View view){
+		String up = "up";
+		ct.write(up.getBytes());
 	}
 }
