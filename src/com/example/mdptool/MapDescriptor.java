@@ -1,11 +1,13 @@
 package com.example.mdptool;
 
+import android.util.Log;
+
 public class MapDescriptor {
 
 	public static final int UNEXPLORED = 0;
 	public static final int WALKABLE = 1;
 	public static final int OBSTACLE = 2;
-
+	int[][] map = new int[15][20];
 	
 	public static void printMapDescriptor(int[][] map) {
 		System.out.println("Explored/Unexplored state");
@@ -83,12 +85,38 @@ public class MapDescriptor {
 		return encodedMap;
 	}
 
-//	public static int[][] decode(String encodedMap) {
-//		String explorationState = "FFC07F80FF01FE03FFFFFFF3FFE7FFCFFF9C7F38FE71FCE3F87FF0FFE1FFC3FF87FF0E0E1C1F";
-//		String obstacleState = "00000100001C80000000001C0000080000060001C00000080000";
-//
-//		return 
-//	}
+	public void decode(String recievedString) {
+		String explorationState = "FFC07F80FF01FE03FFFFFFF3FFE7FFCFFF9C7F38FE71FCE3F87FF0FFE1FFC3FF87FF0E0E1C1F";
+		String obstacleState = "00000100001C80000000001C0000080000060001C00000080000";
+		String exploration = convertHexToBinary(recievedString.substring(0,76));
+		
+		Log.d("HELLLO??", recievedString +" "+exploration.length());
+		String obstacle = "";
+		if(recievedString.length()>76){
+		obstacle = convertHexToBinary(recievedString.substring(77,(recievedString.length())));
+		}
+		int explorationPosition = 2;
+		int obstaclePosition = 0;
+		for(int y=0; y<20; y++){
+			for(int x=0; x<15; x++){
+				if((exploration.charAt(explorationPosition)) == '0'){
+					map[x][y] = 0;
+					explorationPosition++;
+				}else if((exploration.charAt(explorationPosition)) == '1'){
+					if((obstacle.charAt(obstaclePosition)==0)){
+						map[x][y] = 1;
+						explorationPosition++;
+						obstaclePosition++;
+					}else{
+						map[x][y] = 2;
+						explorationPosition++;
+						obstaclePosition++;
+					}
+				}
+			}
+		}
+				
+	}
 
 	private static String convertBinaryToHex(String binary) {
 		String hex = "";
@@ -139,9 +167,51 @@ public class MapDescriptor {
 		return hexString;
 	}
 
-//	private static String convertHexToDecimal(String hex) {
-//		
-//	}
+	private String convertHexToBinary(String hex) {
+		String binary = "";
+		for(int i=0;i<hex.length();i++){
+			switch(hex.charAt(i)){
+			
+			case '0': binary = binary + "0000";
+					break;
+			case '1': binary = binary + "0001";
+					break;
+			case '2': binary = binary + "0010";
+					break;
+			case '3': binary = binary + "0011";
+					break;
+			case '4': binary = binary + "0100";
+					break;
+			case '5': binary = binary + "0101";
+					break;
+			case '6': binary = binary + "0110";
+					break;
+			case '7': binary = binary + "0111";
+					break;
+			case '8': binary = binary + "1000";
+					break;
+			case '9': binary = binary + "1001";
+					break;
+			case 'a': binary = binary + "1010";
+					break;
+			case 'b': binary = binary + "1011";
+					break;
+			case 'c': binary = binary + "1100";
+					break;
+			case 'd': binary = binary + "1101";
+					break;
+			case 'e': binary = binary + "1110";
+					break;
+			case 'f': binary = binary + "1111";
+					break;
+			}
+		}
+		Log.d("lalalal", binary);
+		return binary;
+	}
+	public int[][] getMap(){
+		return map;
+	}
 
 
 }

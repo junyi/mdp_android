@@ -10,10 +10,12 @@ public class MazeThread extends Thread{
 	boolean running = false;
 	Maze maze;
 	SurfaceHolder surfaceHolder;
+	MapDescriptor mapDesc;
 	
-	public MazeThread(SurfaceHolder surfaceHolder, Maze maze){
+	public MazeThread(SurfaceHolder surfaceHolder, Maze maze, MapDescriptor mapDesc){
 		this.maze=maze;
 		this.surfaceHolder = surfaceHolder;
+		this.mapDesc = mapDesc;
 	}
 	public void setRunning(boolean r){
 		running = r;
@@ -26,7 +28,7 @@ public class MazeThread extends Thread{
                        c = surfaceHolder.lockCanvas();
                        if(c != null){
 	                       synchronized (surfaceHolder) {
-	                              maze.onDraw(c);
+	                              maze.onDraw(c,mapDesc.getMap());
 	                       }
                        }
                 } finally {

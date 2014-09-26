@@ -25,6 +25,7 @@ public class MainActivity extends Activity {
 	public static Handler mHandler;
 	TextView receivedMsg;
 	
+	MapDescriptor mapDesc = new MapDescriptor();
 	Maze myMaze;
 	SurfaceHolder holder;
 	@Override
@@ -41,6 +42,8 @@ public class MainActivity extends Activity {
 			     case MESSAGE_READ:	byte[] readBuf = (byte[]) msg.obj;
 			    	 				String string = new String(readBuf,0,msg.arg1);
 			    	 				receivedMsg.setText(string);
+			    	 				
+			    	 				//mapDesc.decode(string);
 			     					break;
 			  }
 			}
@@ -78,14 +81,27 @@ public class MainActivity extends Activity {
 		ct.run();
 	}
 	public void startBtn(View view){
-		myMaze.startMaze();
+		myMaze.startMaze(mapDesc);
 	}
 	public void startPreferencePage(View view){
 		Intent newIntent = new Intent(this, PreferencePage.class);
         this.startActivity(newIntent);
 	}
 	public void sendUp(View view){
-		String up = "up";
+		String up = "w";
 		ct.write(up.getBytes());
 	}
+	public void sendDown(View view){
+		String down = "s";
+		ct.write(down.getBytes());
+	}
+	public void sendLeft(View view){
+		String left = "a";
+		ct.write(left.getBytes());
+	}
+	public void sendRight(View view){
+		String right = "d";
+		ct.write(right.getBytes());
+	}
+	
 }

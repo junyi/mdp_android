@@ -27,16 +27,19 @@ public class Maze extends SurfaceView implements SurfaceHolder.Callback {
 		super(context);
 		// TODO Auto-generated constructor stub
 		getHolder().addCallback(this);
+		
 	}
 	public Maze(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 		getHolder().addCallback(this);
+		
 	}
 	public Maze(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		// TODO Auto-generated constructor stub
 		getHolder().addCallback(this);
+		
 	}
 
 	@Override
@@ -72,7 +75,7 @@ public class Maze extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
-	protected void onDraw(Canvas canvas){
+	protected void onDraw(Canvas canvas, int[][] map){
 		//super.onDraw(canvas);
 		int mGridSize = Math.min((canvas.getHeight() / row), (canvas.getWidth() / column));
 		int xOffset = (canvas.getHeight() - (mGridSize * row)) / 2;
@@ -92,17 +95,23 @@ public class Maze extends SurfaceView implements SurfaceHolder.Callback {
 	            if((x==6 || x==7 ||x ==8) && (y==8 || y==9 ||  y==10)){
 	            	rectColor.setColor(Color.BLUE);
 	            }
+	            if(map[x][y] == 1){
+	        		rectColor.setColor(Color.LTGRAY);
+	        	}else if(map[x][y] == 2){
+	        		rectColor.setColor(Color.BLACK);
+	        	}
 	        	rectColor.setStyle(Paint.Style.FILL);
 	        	canvas.drawRect(rect, rectColor);
 	        	rectColor.setColor(Color.BLACK);
 	        	rectColor.setStrokeWidth(2);
 	        	rectColor.setStyle(Paint.Style.STROKE);
 	        	canvas.drawRect(rect, rectColor);
+	        	
             }
 		}
 	}
-	public void startMaze(){
-		mazeThread = new MazeThread(surfaceHolder,this);
+	public void startMaze(MapDescriptor MapDesc){
+		mazeThread = new MazeThread(surfaceHolder,this, MapDesc);
 		mazeThread.setRunning(true);
 		mazeThread.start();
 	}
