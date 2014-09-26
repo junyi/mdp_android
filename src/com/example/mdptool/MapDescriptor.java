@@ -89,11 +89,11 @@ public class MapDescriptor {
 		String explorationState = "FFC07F80FF01FE03FFFFFFF3FFE7FFCFFF9C7F38FE71FCE3F87FF0FFE1FFC3FF87FF0E0E1C1F";
 		String obstacleState = "00000100001C80000000001C0000080000060001C00000080000";
 		String exploration = convertHexToBinary(recievedString.substring(0,76));
-		
-		Log.d("HELLLO??", recievedString +" "+exploration.length());
+		Log.d("exploration", exploration +" "+exploration.length());
 		String obstacle = "";
 		if(recievedString.length()>76){
-		obstacle = convertHexToBinary(recievedString.substring(77,(recievedString.length())));
+		obstacle = convertHexToBinary(recievedString.substring(76,(recievedString.length())));
+		Log.d("obstacle", recievedString.substring(77,(recievedString.length())) + "" +obstacle +" "+obstacle.length());
 		}
 		int explorationPosition = 2;
 		int obstaclePosition = 0;
@@ -101,21 +101,18 @@ public class MapDescriptor {
 			for(int x=0; x<15; x++){
 				if((exploration.charAt(explorationPosition)) == '0'){
 					map[x][y] = 0;
-					explorationPosition++;
-				}else if((exploration.charAt(explorationPosition)) == '1'){
-					if((obstacle.charAt(obstaclePosition)==0)){
+				}else{
+					if((obstacle.charAt(obstaclePosition)== '0')){
 						map[x][y] = 1;
-						explorationPosition++;
 						obstaclePosition++;
 					}else{
 						map[x][y] = 2;
-						explorationPosition++;
 						obstaclePosition++;
 					}
 				}
+				explorationPosition++;
 			}
-		}
-				
+		}		
 	}
 
 	private static String convertBinaryToHex(String binary) {
@@ -206,7 +203,6 @@ public class MapDescriptor {
 					break;
 			}
 		}
-		Log.d("lalalal", binary);
 		return binary;
 	}
 	public int[][] getMap(){

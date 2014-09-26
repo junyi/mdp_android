@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 			    	 				String string = new String(readBuf,0,msg.arg1);
 			    	 				receivedMsg.setText(string);
 			    	 				
-			    	 				//mapDesc.decode(string);
+			    	 				mapDesc.decode(string);
 			     					break;
 			  }
 			}
