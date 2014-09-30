@@ -28,7 +28,7 @@ public class MazeThread extends Thread{
                        c = surfaceHolder.lockCanvas();
                        if(c != null){
 	                       synchronized (surfaceHolder) {
-	                              maze.onDraw(c,mapDesc.getMap());
+	                              maze.onDraw(c,mapDesc.getMap(),mapDesc.getRobotPos());
 	                       }
                        }
                 } finally {

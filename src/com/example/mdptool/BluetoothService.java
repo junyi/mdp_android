@@ -74,9 +74,9 @@ public class BluetoothService extends Activity {
 			   @Override
 			   public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
 			      Object listItem = listView.getItemAtPosition(position);
-			      server.cancel();
+			      //server.cancel();
 			      client = new BluetoothConnectThread(listItem);
-			      client.run();
+			      client.start();
 			   } 
 			});
 
@@ -117,9 +117,10 @@ public class BluetoothService extends Activity {
 		// Register the BroadcastReceiver
 		IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
 		registerReceiver(mReceiver, filter);
-		
-		
-
+	}
+	protected void onPause(){
+		super.onPause();
+		unregisterReceiver(mReceiver);
 	}
 	public void startDiscovery(View view){
 			mAvailDeviceArrayAdapter.clear();

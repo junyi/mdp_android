@@ -7,8 +7,10 @@ public class MapDescriptor {
 	public static final int UNEXPLORED = 0;
 	public static final int WALKABLE = 1;
 	public static final int OBSTACLE = 2;
-	int[][] map = new int[15][20];
-	
+	int[][] fakeMap = new int[15][20];
+	int[] fakeRobotPos = new int[3];
+	int[][] trueMap = new int[15][20];
+	int[] trueRobotPos = new int[3];
 	public static void printMapDescriptor(int[][] map) {
 		System.out.println("Explored/Unexplored state");
 		System.out.println("=========================");
@@ -85,13 +87,13 @@ public class MapDescriptor {
 		return encodedMap;
 	}
 
-	public void decode(String recievedString) {
+	public void decode(String recievedString, boolean check) {
 		String explorationState = "FFC07F80FF01FE03FFFFFFF3FFE7FFCFFF9C7F38FE71FCE3F87FF0FFE1FFC3FF87FF0E0E1C1F";
 		String obstacleState = "00000100001C80000000001C0000080000060001C00000080000";
 		String exploration = convertHexToBinary(recievedString.substring(0,76));
 		Log.d("exploration", exploration +" "+exploration.length());
 		String obstacle = "";
-		if(recievedString.length()>76){
+		if(recievedString.length()>81){
 		obstacle = convertHexToBinary(recievedString.substring(76,(recievedString.length())));
 		Log.d("obstacle", recievedString.substring(77,(recievedString.length())) + "" +obstacle +" "+obstacle.length());
 		}
@@ -100,19 +102,27 @@ public class MapDescriptor {
 		for(int y=0; y<20; y++){
 			for(int x=0; x<15; x++){
 				if((exploration.charAt(explorationPosition)) == '0'){
-					map[x][y] = 0;
+					fakeMap[x][y] = 0;
 				}else{
-					if((obstacle.charAt(obstaclePosition)== '0')){
-						map[x][y] = 1;
+					if((obstacle.charAt(obstaclePosition) == '0')){
+						fakeMap[x][y] = 1;
 						obstaclePosition++;
 					}else{
-						map[x][y] = 2;
+						fakeMap[x][y] = 2;
 						obstaclePosition++;
 					}
 				}
 				explorationPosition++;
 			}
-		}		
+		}
+		fakeRobotPos[0] = Integer.parseInt(recievedString.substring((recievedString.length()-5), (recievedString.length()-3)));
+		fakeRobotPos[1] = Integer.parseInt(recievedString.substring(recievedString.length()-3, recievedString.length()-1));
+		Log.d("robotpos", ""+fakeRobotPos[0]+" "+fakeRobotPos[1]);
+		fakeRobotPos[2] = Integer.parseInt(recievedString.substring(recievedString.length()-1));
+		
+		if(check){
+			updateValue();
+		}
 	}
 
 	private static String convertBinaryToHex(String binary) {
@@ -206,7 +216,14 @@ public class MapDescriptor {
 		return binary;
 	}
 	public int[][] getMap(){
-		return map;
+		return trueMap;
+	}
+	public int[] getRobotPos(){
+		return trueRobotPos;
+	}
+	public void updateValue(){
+		trueRobotPos = fakeRobotPos.clone();
+		trueMap = fakeMap.clone();
 	}
 
 

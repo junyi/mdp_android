@@ -7,7 +7,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.util.Log;
 
-public class BluetoothConnectThread {
+public class BluetoothConnectThread extends Thread {
 	private final BluetoothSocket mmSocket;
     private final BluetoothDevice mmDevice;
     private BluetoothAdapter mBluetoothAdapter;
@@ -39,6 +39,7 @@ public class BluetoothConnectThread {
            mmSocket.connect();
         } catch (IOException connectException) {
             // Unable to connect; close the socket and get out
+        	Log.d("client", "cannot connect");
             try {
                 mmSocket.close();
             } catch (IOException closeException) { }
@@ -48,6 +49,7 @@ public class BluetoothConnectThread {
         // Do work to manage the connection (in a separate thread)
         if (mmSocket != null) {
             // Do work to manage the connection (in a separate thread)
+        	Log.d("client", "connected");
             MainActivity.manageConnectedSocket(mmSocket);
         }
     }

@@ -98,9 +98,30 @@
         android:id="@+id/receivedMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_start"
-        android:layout_alignLeft="@+id/button_start"
+        android:layout_above="@+id/toggleMap"
+        android:layout_alignLeft="@+id/toggleMap"
         android:layout_marginBottom="67dp"
         android:text="" />
+
+    <ToggleButton
+        android:id="@+id/toggleMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_start"
+        android:layout_alignLeft="@+id/button_start"
+        android:text="Auto"
+        android:onClick="toggleMap"
+        android:textOff="Manual"
+		android:textOn="Auto" />
+
+    <Button
+        android:id="@+id/autoManual"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_start"
+        android:layout_toRightOf="@+id/toggleMap"
+        android:text="Update Map"
+        android:onClick="updateMap" />
 
 </RelativeLayout>

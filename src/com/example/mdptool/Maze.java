@@ -1,8 +1,13 @@
 package com.example.mdptool;
 
+
+
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -75,11 +80,13 @@ public class Maze extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
-	protected void onDraw(Canvas canvas, int[][] map){
+	protected void onDraw(Canvas canvas, int[][] map, int[] robotPos){
 		//super.onDraw(canvas);
 		int mGridSize = Math.min((canvas.getHeight() / row), (canvas.getWidth() / column));
 		int xOffset = (canvas.getHeight() - (mGridSize * row)) / 2;
 		int yOffset = (canvas.getWidth() - (mGridSize * column)) / 2;
+		Bitmap bMap = BitmapFactory.decodeResource(getResources(), R.drawable.robert);
+		Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, mGridSize*3 , mGridSize*3, true);
 		for(int x = 0; x < row; x++){
             for(int y = 0; y < column; y++){
             	leftCoord = yOffset + mGridSize * y;
@@ -89,17 +96,18 @@ public class Maze extends SurfaceView implements SurfaceHolder.Callback {
             	rect = new RectF(leftCoord, topCoord, rightCoord, botCoord);
             	
 	            rectColor.setColor(Color.WHITE);
+	   
+	            if(map[x][y] == 1){
+	        		rectColor.setColor(Color.LTGRAY);
+	        	}else if(map[x][y] == 2){
+	        		rectColor.setColor(Color.BLACK);
+	        	}
 	            if(((x==0 || x==1 || x==2 ) && (y==0 || y==1 || y==2)) || ((x==14 || x==13 || x==12 ) && (y==19 || y==18 || y==17))){
 	            	rectColor.setColor(Color.GREEN);
 	            }
 	            if((x==6 || x==7 ||x ==8) && (y==8 || y==9 ||  y==10)){
 	            	rectColor.setColor(Color.BLUE);
 	            }
-	            if(map[x][y] == 1){
-	        		rectColor.setColor(Color.LTGRAY);
-	        	}else if(map[x][y] == 2){
-	        		rectColor.setColor(Color.BLACK);
-	        	}
 	        	rectColor.setStyle(Paint.Style.FILL);
 	        	canvas.drawRect(rect, rectColor);
 	        	rectColor.setColor(Color.BLACK);
@@ -107,6 +115,27 @@ public class Maze extends SurfaceView implements SurfaceHolder.Callback {
 	        	rectColor.setStyle(Paint.Style.STROKE);
 	        	canvas.drawRect(rect, rectColor);
 	        	
+	        	int facing = robotPos[2];
+	        	Matrix matrix = new Matrix();
+	        	Bitmap rotatedBitmap;
+	        	
+	        	switch(facing){
+	        		case 1: 	canvas.drawBitmap(bMapScaled, yOffset+(robotPos[1]-1)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
+	        					break;
+	        		case 2: 	matrix.postRotate(90);
+	        					rotatedBitmap = Bitmap.createBitmap(bMapScaled, 0, 0, bMapScaled.getWidth(), bMapScaled.getHeight(), matrix, true);
+	        					canvas.drawBitmap(rotatedBitmap, yOffset+(robotPos[1]-1)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
+	        					break;
+	        		case 3:		matrix.postRotate(180);
+	        					rotatedBitmap = Bitmap.createBitmap(bMapScaled, 0, 0, bMapScaled.getWidth(), bMapScaled.getHeight(), matrix, true);
+	        					canvas.drawBitmap(rotatedBitmap, yOffset+(robotPos[1]-1)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
+	        					break;
+	        		case 4:		matrix.postRotate(270);
+								rotatedBitmap = Bitmap.createBitmap(bMapScaled, 0, 0, bMapScaled.getWidth(), bMapScaled.getHeight(), matrix, true);
+								canvas.drawBitmap(rotatedBitmap, yOffset+(robotPos[1]-1)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
+								break;
+	        					
+	        	}
             }
 		}
 	}
