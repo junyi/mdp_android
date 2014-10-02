@@ -38,6 +38,7 @@ public class BluetoothServerThread extends Thread{
             // If a connection was accepted
             if (socket != null) {
                 // Do work to manage the connection (in a separate thread)
+            	MainActivity.setBluetoothObject(socket.getRemoteDevice());
                 MainActivity.manageConnectedSocket(socket);
             	Log.d("THREAD","connected");
                 try {

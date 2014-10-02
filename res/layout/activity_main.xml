@@ -67,7 +67,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button_right"
         android:layout_alignParentRight="true"
-        android:text="F2" />
+        android:text="F2"
+        android:onClick="sendF2" />
 
     <Button
         android:id="@+id/button_f1"
@@ -76,7 +77,8 @@
         android:layout_alignBaseline="@+id/button_f2"
         android:layout_alignBottom="@+id/button_f2"
         android:layout_toLeftOf="@+id/button_f2"
-        android:text="F1" />
+        android:text="F1" 
+        android:onClick="sendF1"/>
 
     <Button
         android:id="@+id/button_conf"
@@ -123,5 +125,34 @@
         android:layout_toRightOf="@+id/toggleMap"
         android:text="Update Map"
         android:onClick="updateMap" />
+
+    <Button
+        android:id="@+id/speechRec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/autoManual"
+        android:layout_alignLeft="@+id/button_f1"
+        android:text= "Speech" 
+        android:onClick="turnOnVoice"/>
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/speechRec"
+        android:layout_alignLeft="@+id/speechRec"
+        android:textOff="Tilt Off"
+		android:textOn="Tilt On"
+		android:onClick="turnTilt" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/toggleButton1"
+        android:layout_alignLeft="@+id/button_conf"
+        android:textOff="Gesture Off"
+		android:textOn="Gesture On"
+		android:onClick="turnGesture" />
 
 </RelativeLayout>
