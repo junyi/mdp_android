@@ -82,8 +82,13 @@ public class MainActivity extends Activity {
 			    	 				if(string.contains("STAT")){
 			    	 					char stat = string.charAt(4);
 			    	 					Log.d("char", ""+stat);
-			    	 					//Integer.toBinaryString((int)stat);
-			    	 					updateStatus(Integer.toBinaryString((int)stat).substring(0,4));
+			    	 					String robotCommand = Integer.toBinaryString((int)stat);
+			    	 					int toPad = 6-robotCommand.length();
+			    	 					for(int i =0;i<toPad;i++){
+			    	 						robotCommand = "0"+robotCommand;
+			    	 					}
+			    	 					Log.d("Message",robotCommand );
+			    	 					updateStatus(robotCommand);
 			    	 					
 			    	 				}else if(string.contains("GRID")){
 			    	 					mapDesc.decode(string.substring(4),toggle.isChecked());

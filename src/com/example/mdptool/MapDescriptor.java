@@ -115,10 +115,24 @@ public class MapDescriptor {
 				explorationPosition++;
 			}
 		}
-		fakeRobotPos[0] = Integer.parseInt(recievedString.substring((recievedString.length()-5), (recievedString.length()-3)));
-		fakeRobotPos[1] = Integer.parseInt(recievedString.substring(recievedString.length()-3, recievedString.length()-1));
+		int index = 0;
+		if (recievedString.contains("WEST")){
+			fakeRobotPos[2] = 1;
+			index = recievedString.indexOf("WEST");
+		}else if(recievedString.contains("NORTH")){
+			fakeRobotPos[2] = 2;
+			index = recievedString.indexOf("NORTH");
+		}else if (recievedString.contains("EAST")){
+			fakeRobotPos[2] = 3;
+			index = recievedString.indexOf("EAST");
+		}else if(recievedString.contains("SOUTH")){
+			fakeRobotPos[2] = 4;
+			index = recievedString.indexOf("SOUTH");
+		}
+			
+		fakeRobotPos[0] = Integer.parseInt(recievedString.substring(index-4, index-2));
+		fakeRobotPos[1] = Integer.parseInt(recievedString.substring(index-2, index));
 		Log.d("robotpos", ""+fakeRobotPos[0]+" "+fakeRobotPos[1]);
-		fakeRobotPos[2] = Integer.parseInt(recievedString.substring(recievedString.length()-1));
 		
 		if(check){
 			updateValue();
