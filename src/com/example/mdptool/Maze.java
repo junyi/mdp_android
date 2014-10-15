@@ -120,19 +120,19 @@ public class Maze extends SurfaceView implements SurfaceHolder.Callback {
 	        	Bitmap rotatedBitmap;
 	        	
 	        	switch(facing){
-	        		case 1: 	canvas.drawBitmap(bMapScaled, yOffset+(robotPos[1]-1)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
+	        		case 1: 	canvas.drawBitmap(bMapScaled, yOffset+(robotPos[1]-2)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
 	        					break;
 	        		case 2: 	matrix.postRotate(90);
 	        					rotatedBitmap = Bitmap.createBitmap(bMapScaled, 0, 0, bMapScaled.getWidth(), bMapScaled.getHeight(), matrix, true);
-	        					canvas.drawBitmap(rotatedBitmap, yOffset+(robotPos[1]-1)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
+	        					canvas.drawBitmap(rotatedBitmap, yOffset+(robotPos[1]-2)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
 	        					break;
 	        		case 3:		matrix.postRotate(180);
 	        					rotatedBitmap = Bitmap.createBitmap(bMapScaled, 0, 0, bMapScaled.getWidth(), bMapScaled.getHeight(), matrix, true);
-	        					canvas.drawBitmap(rotatedBitmap, yOffset+(robotPos[1]-1)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
+	        					canvas.drawBitmap(rotatedBitmap, yOffset+(robotPos[1]-2)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
 	        					break;
 	        		case 4:		matrix.postRotate(270);
 								rotatedBitmap = Bitmap.createBitmap(bMapScaled, 0, 0, bMapScaled.getWidth(), bMapScaled.getHeight(), matrix, true);
-								canvas.drawBitmap(rotatedBitmap, yOffset+(robotPos[1]-1)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
+								canvas.drawBitmap(rotatedBitmap, yOffset+(robotPos[1]-2)*mGridSize,xOffset+(robotPos[0]-1)*mGridSize, null);
 								break;
 	        					
 	        	}

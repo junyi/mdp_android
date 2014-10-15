@@ -91,6 +91,7 @@ public class MainActivity extends Activity {
 			    	 					updateStatus(robotCommand);
 			    	 					
 			    	 				}else if(string.contains("GRID")){
+			    	 					Log.d("decode", string);
 			    	 					mapDesc.decode(string.substring(4),toggle.isChecked());
 			    	 				}else{
 			    	 					Toast.makeText(MainActivity.this, "WRONG COMMAND", Toast.LENGTH_LONG).show();
@@ -292,20 +293,16 @@ public class MainActivity extends Activity {
         this.startActivity(newIntent);
 	}
 	public void sendUp(View view){
-		String up = "w";
-		ct.write(up.getBytes());
+		ct.write("Forward".getBytes());
 	}
 	public void sendDown(View view){
-		String down = "s";
-		ct.write(down.getBytes());
+		ct.write("Down".getBytes());
 	}
 	public void sendLeft(View view){
-		String left = "a";
-		ct.write(left.getBytes());
+		ct.write("Left".getBytes());
 	}
 	public void sendRight(View view){
-		String right = "d";
-		ct.write(right.getBytes());
+		ct.write("Right".getBytes());
 	}
 	public void sendF1(View view){
 		SharedPreferences prefs = this.getSharedPreferences(
