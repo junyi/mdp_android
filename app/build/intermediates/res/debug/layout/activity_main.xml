@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <Button
+        android:id="@+id/button_down"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:text="DOWN"
+        android:onClick="sendDown" />
+
+    <Button
+        android:id="@+id/button_up"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_down"
+        android:layout_alignLeft="@+id/button_down"
+        android:text="UP"
+        android:onClick="sendUp" />
+
+    <Button
+        android:id="@+id/button_right"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_up"
+        android:layout_toRightOf="@+id/button_down"
+        android:text="RIGHT"
+        android:onClick="sendRight" />
+
+    <Button
+        android:id="@+id/button_left"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_up"
+        android:layout_toLeftOf="@+id/button_down"
+        android:text="LEFT" 
+        android:onClick="sendLeft"/>
+
+    <Button
+        android:id="@+id/button_stop"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_left"
+        android:layout_alignBottom="@+id/button_left"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/button_left"
+        android:text="Stop" />
+
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_up"
+        android:layout_alignBottom="@+id/button_up"
+        android:layout_alignLeft="@+id/button_stop"
+        android:text="Start"
+        android:onClick="startBtn" />
+
+    <Button
+        android:id="@+id/button_f2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_right"
+        android:layout_alignParentRight="true"
+        android:text="F2"
+        android:onClick="sendF2" />
+
+    <Button
+        android:id="@+id/button_f1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_f2"
+        android:layout_alignBottom="@+id/button_f2"
+        android:layout_toLeftOf="@+id/button_f2"
+        android:text="F1" 
+        android:onClick="sendF1"/>
+
+    <Button
+        android:id="@+id/button_conf"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_right"
+        android:layout_alignBottom="@+id/button_right"
+        android:layout_alignParentRight="true"
+        android:text="Configure"
+        android:onClick="startPreferencePage" />
+
+    <com.example.mdptool.Maze
+        android:id="@+id/maze"
+        android:layout_width="600dp"
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/receivedMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/toggleMap"
+        android:layout_alignLeft="@+id/toggleMap"
+        android:layout_marginBottom="67dp"
+        android:text="" />
+
+    <ToggleButton
+        android:id="@+id/toggleMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_start"
+        android:layout_alignLeft="@+id/button_start"
+        android:text="Auto"
+        android:onClick="toggleMap"
+        android:textOff="Manual"
+		android:textOn="Auto" />
+
+    <Button
+        android:id="@+id/autoManual"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_start"
+        android:layout_toRightOf="@+id/toggleMap"
+        android:text="Update Map"
+        android:onClick="updateMap" />
+
+    <Button
+        android:id="@+id/speechRec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/autoManual"
+        android:layout_alignLeft="@+id/button_f1"
+        android:text= "Speech" 
+        android:onClick="turnOnVoice"/>
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/speechRec"
+        android:layout_alignLeft="@+id/speechRec"
+        android:textOff="Tilt Off"
+		android:textOn="Tilt On"
+		android:onClick="turnTilt" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/toggleButton1"
+        android:layout_alignLeft="@+id/button_conf"
+        android:textOff="Gesture Off"
+		android:textOn="Gesture On"
+		android:onClick="turnGesture" />
+
+</RelativeLayout><!-- From: file:/G:/PYP/mdp_android/app/src/main/res/layout/activity_main.xml -->
