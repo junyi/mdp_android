@@ -6,7 +6,7 @@
 
     <Button
         android:id="@+id/button_down"
-        android:layout_width="100dp"
+        android:layout_width="@dimen/dirButtonWidth"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -16,7 +16,7 @@
 
     <Button
         android:id="@+id/button_up"
-        android:layout_width="100dp"
+        android:layout_width="@dimen/dirButtonWidth"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button_down"
         android:layout_alignLeft="@+id/button_down"
@@ -25,7 +25,7 @@
 
     <Button
         android:id="@+id/button_right"
-        android:layout_width="100dp"
+        android:layout_width="@dimen/dirButtonWidth"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_up"
         android:layout_toRightOf="@+id/button_down"
@@ -34,7 +34,7 @@
 
     <Button
         android:id="@+id/button_left"
-        android:layout_width="100dp"
+        android:layout_width="@dimen/dirButtonWidth"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_up"
         android:layout_toLeftOf="@+id/button_down"

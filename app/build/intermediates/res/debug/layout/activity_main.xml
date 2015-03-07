@@ -155,4 +155,4 @@
 		android:textOn="Gesture On"
 		android:onClick="turnGesture" />
 
-</RelativeLayout><!-- From: file:/G:/PYP/mdp_android/app/src/main/res/layout/activity_main.xml -->
+</RelativeLayout><!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/layout/activity_main.xml -->
