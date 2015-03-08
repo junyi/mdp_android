@@ -4,42 +4,50 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <Button
+
+    <ImageButton
         android:id="@+id/button_down"
-        android:layout_width="@dimen/dirButtonWidth"
-        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/dirButtonHeight"
+        android:layout_height="@dimen/dirButtonHeight"
         android:layout_marginBottom="27dp"
-        android:text="DOWN"
-        android:onClick="sendDown" />
+        android:background="@drawable/downselector"
+        android:onClick="sendDown"
+        />
 
-    <Button
+    <ImageButton
         android:id="@+id/button_up"
-        android:layout_width="@dimen/dirButtonWidth"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/dirButtonHeight"
+        android:layout_height="@dimen/dirButtonHeight"
         android:layout_above="@+id/button_down"
+        android:layout_marginBottom="50dp"
         android:layout_alignLeft="@+id/button_down"
-        android:text="UP"
-        android:onClick="sendUp" />
+        android:background="@drawable/upselector"
+        android:onClick="sendUp"
+        />
 
-    <Button
+    <ImageButton
         android:id="@+id/button_right"
-        android:layout_width="@dimen/dirButtonWidth"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_up"
+        android:layout_width="@dimen/dirButtonHeight"
+        android:layout_height="@dimen/dirButtonHeight"
+        android:layout_above="@+id/button_down"
+        android:layout_marginBottom="0dp"
         android:layout_toRightOf="@+id/button_down"
-        android:text="RIGHT"
-        android:onClick="sendRight" />
+        android:background="@drawable/rightselector"
+        android:onClick="sendRight"
+        />
 
-    <Button
+    <ImageButton
         android:id="@+id/button_left"
-        android:layout_width="@dimen/dirButtonWidth"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_up"
+        android:layout_width="@dimen/dirButtonHeight"
+        android:layout_height="@dimen/dirButtonHeight"
+        android:layout_above="@+id/button_down"
+        android:layout_marginBottom="0dp"
         android:layout_toLeftOf="@+id/button_down"
-        android:text="LEFT" 
-        android:onClick="sendLeft"/>
+        android:background="@drawable/leftselector"
+        android:onClick="sendLeft"
+        />
 
     <Button
         android:id="@+id/button_stop"
