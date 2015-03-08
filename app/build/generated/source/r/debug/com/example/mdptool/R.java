@@ -20,15 +20,16 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
         public static final int left=0x7f020003;
         public static final int leftselector=0x7f020004;
-        public static final int pressdown=0x7f020005;
-        public static final int pressleft=0x7f020006;
-        public static final int pressright=0x7f020007;
-        public static final int pressup=0x7f020008;
-        public static final int right=0x7f020009;
-        public static final int rightselector=0x7f02000a;
-        public static final int robert=0x7f02000b;
-        public static final int up=0x7f02000c;
-        public static final int upselector=0x7f02000d;
+        public static final int logo2=0x7f020005;
+        public static final int pressdown=0x7f020006;
+        public static final int pressleft=0x7f020007;
+        public static final int pressright=0x7f020008;
+        public static final int pressup=0x7f020009;
+        public static final int right=0x7f02000a;
+        public static final int rightselector=0x7f02000b;
+        public static final int robert=0x7f02000c;
+        public static final int up=0x7f02000d;
+        public static final int upselector=0x7f02000e;
     }
     public static final class id {
         public static final int action_connect=0x7f080019;

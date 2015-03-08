@@ -13,7 +13,7 @@
         android:layout_height="@dimen/dirButtonHeight"
         android:layout_marginBottom="27dp"
         android:background="@drawable/downselector"
-        android:onClick="@null"
+        android:onClick="sendDown"
         />
 
     <ImageButton
@@ -24,7 +24,7 @@
         android:layout_marginBottom="50dp"
         android:layout_alignLeft="@+id/button_down"
         android:background="@drawable/upselector"
-        android:onClick="@null"
+        android:onClick="sendUp"
         />
 
     <ImageButton
@@ -35,7 +35,7 @@
         android:layout_marginBottom="0dp"
         android:layout_toRightOf="@+id/button_down"
         android:background="@drawable/rightselector"
-        android:onClick="@null"
+        android:onClick="sendRight"
         />
 
     <ImageButton
@@ -46,7 +46,7 @@
         android:layout_marginBottom="0dp"
         android:layout_toLeftOf="@+id/button_down"
         android:background="@drawable/leftselector"
-        android:onClick="@null"
+        android:onClick="sendLeft"
         />
 
     <Button
