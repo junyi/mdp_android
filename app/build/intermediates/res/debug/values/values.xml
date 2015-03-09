@@ -7,7 +7,7 @@
     <!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_connect">BlueTooth Connect</string>
-    <string name="app_name">MDPTool</string>
+    <string name="app_name">MazeBuster</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_bluetooth_service">BluetoothService</string>
     <string name="title_activity_preference_page">PreferencePage</string>
