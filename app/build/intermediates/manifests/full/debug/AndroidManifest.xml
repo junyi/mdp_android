@@ -36,6 +36,9 @@
             android:name="com.example.mdptool.PreferencePage"
             android:label="@string/title_activity_preference_page" >
         </activity>
+        <activity
+            android:name="com.example.mdptool.SendCoordinates"
+            android:label="MazeBuster" />
     </application>
 
 </manifest>

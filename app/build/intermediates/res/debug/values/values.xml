@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <color name="start_button_color">#00A600</color>
+    <color name="stop_button_color">#FF0000</color>
     <!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
-    <dimen name="dirButtonHeight">50dp</dimen>
-    <dimen name="dirButtonWidth">100dp</dimen>
+    <dimen name="buttonBottomBuffer">27dp</dimen>
+    <dimen name="buttonEdgeBuffer">20dp</dimen>
+    <dimen name="buttonWidth">110dp</dimen>
+    <dimen name="dirButtonHeight">100dp</dimen>
     <!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_connect">BlueTooth Connect</string>

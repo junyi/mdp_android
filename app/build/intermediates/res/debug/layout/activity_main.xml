@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true"
         android:layout_width="@dimen/dirButtonHeight"
         android:layout_height="@dimen/dirButtonHeight"
-        android:layout_marginBottom="27dp"
+        android:layout_marginBottom="@dimen/buttonBottomBuffer"
         android:background="@drawable/downselector"
         android:onClick="sendDown"
         />
@@ -20,9 +20,8 @@
         android:id="@+id/button_up"
         android:layout_width="@dimen/dirButtonHeight"
         android:layout_height="@dimen/dirButtonHeight"
-        android:layout_above="@+id/button_down"
-        android:layout_marginBottom="50dp"
-        android:layout_alignLeft="@+id/button_down"
+        android:layout_above="@+id/button_left"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/upselector"
         android:onClick="sendUp"
         />
@@ -50,33 +49,50 @@
         />
 
     <Button
+        android:background="@color/stop_button_color"
+        android:text="Stop"
         android:id="@+id/button_stop"
-        android:layout_width="110dp"
+        android:layout_width="@dimen/buttonWidth"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button_left"
-        android:layout_alignBottom="@+id/button_left"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/button_left"
-        android:text="Stop" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
+        android:layout_alignLeft="@id/button_down"
+        android:layout_alignBottom="@id/button_down"
+        />
 
     <Button
-        android:id="@+id/button_start"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button_up"
-        android:layout_alignBottom="@+id/button_up"
-        android:layout_alignLeft="@+id/button_stop"
+        android:background="@color/start_button_color"
         android:text="Start"
-        android:onClick="startBtn" />
+        android:id="@+id/button_start"
+        android:onClick="startBtn"
+        android:layout_width="@dimen/buttonWidth"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button_stop"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
+        />
+
+    <Button
+        android:id="@+id/button_conf"
+        android:layout_marginBottom="@dimen/buttonBottomBuffer"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Configure"
+        android:onClick="startPreferencePage"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/buttonEdgeBuffer"
+        android:layout_alignRight="@id/button_down"
+        android:layout_alignBottom="@id/button_down"
+        />
 
     <Button
         android:id="@+id/button_f2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_right"
-        android:layout_alignParentRight="true"
         android:text="F2"
-        android:onClick="sendF2" />
+        android:onClick="sendF2"
+        android:layout_above="@+id/speechRec"
+        android:layout_alignEnd="@+id/button_conf" />
 
     <Button
         android:id="@+id/button_f1"
@@ -88,21 +104,13 @@
         android:text="F1" 
         android:onClick="sendF1"/>
 
-    <Button
-        android:id="@+id/button_conf"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button_right"
-        android:layout_alignBottom="@+id/button_right"
-        android:layout_alignParentRight="true"
-        android:text="Configure"
-        android:onClick="startPreferencePage" />
-
     <com.example.mdptool.Maze
         android:id="@+id/maze"
         android:layout_width="600dp"
         android:layout_height="400dp"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
 
     <TextView
         android:id="@+id/receivedMsg"
@@ -117,50 +125,59 @@
         android:id="@+id/toggleMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_start"
-        android:layout_alignLeft="@+id/button_start"
         android:text="Auto"
         android:onClick="toggleMap"
         android:textOff="Manual"
-		android:textOn="Auto" />
+		android:textOn="Auto"
+        android:layout_above="@+id/toggleButton2"
+        android:layout_alignEnd="@+id/button_start" />
 
     <Button
         android:id="@+id/autoManual"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_start"
-        android:layout_toRightOf="@+id/toggleMap"
         android:text="Update Map"
-        android:onClick="updateMap" />
+        android:onClick="updateMap"
+        android:layout_above="@+id/button_up"
+        android:layout_toEndOf="@+id/receivedMsg" />
 
     <Button
         android:id="@+id/speechRec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/autoManual"
-        android:layout_alignLeft="@+id/button_f1"
-        android:text= "Speech" 
-        android:onClick="turnOnVoice"/>
+        android:text= "Speech"
+        android:onClick="turnOnVoice"
+        android:layout_above="@+id/button_conf"
+        android:layout_alignEnd="@+id/button_f2" />
 
     <ToggleButton
         android:id="@+id/toggleButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/speechRec"
-        android:layout_alignLeft="@+id/speechRec"
         android:textOff="Tilt Off"
 		android:textOn="Tilt On"
-		android:onClick="turnTilt" />
+		android:onClick="turnTilt"
+        android:layout_above="@+id/button_f2"
+        android:layout_alignEnd="@+id/button_f2" />
 
     <ToggleButton
         android:id="@+id/toggleButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/toggleButton1"
-        android:layout_alignLeft="@+id/button_conf"
         android:textOff="Gesture Off"
 		android:textOn="Gesture On"
-		android:onClick="turnGesture" />
+		android:onClick="turnGesture"
+        android:layout_above="@+id/button_left"
+        android:layout_alignStart="@+id/button3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send XY"
+        android:id="@+id/button3"
+        android:onClick="startCoordinatePage"
+        android:layout_below="@+id/toggleButton2"
+        android:layout_alignStart="@+id/button_start" />
 
 </RelativeLayout><!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/layout/activity_main.xml -->

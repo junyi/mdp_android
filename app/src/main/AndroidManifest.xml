@@ -37,6 +37,7 @@
             android:name=".PreferencePage"
             android:label="@string/title_activity_preference_page" >
         </activity>
+        <activity android:name=".SendCoordinates" android:label="MazeBuster"></activity>
     </application>
 
 </manifest>

@@ -81,3 +81,9 @@ ADDED from AndroidManifest.xml:36:9
 		ADDED from AndroidManifest.xml:38:13
 	android:name
 		ADDED from AndroidManifest.xml:37:13
+activity#com.example.mdptool.SendCoordinates
+ADDED from AndroidManifest.xml:40:9
+	android:label
+		ADDED from AndroidManifest.xml:40:51
+	android:name
+		ADDED from AndroidManifest.xml:40:19

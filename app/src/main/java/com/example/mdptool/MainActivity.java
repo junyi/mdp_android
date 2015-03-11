@@ -305,6 +305,10 @@ public class MainActivity extends Activity {
         this.startActivity(newIntent);
     }
 
+    public void startCoordinatePage(View view) {
+        Intent newIntent1 = new Intent(this, SendCoordinates.class);
+        this.startActivity(newIntent1);
+    }
     public static byte[] concat(byte[] a, byte[] b) {
         int lengthA = a.length;
         int lengthB = b.length;

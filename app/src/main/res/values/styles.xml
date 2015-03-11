@@ -22,4 +22,7 @@
         <item name="android:colorBackground">#FFFFFF</item>
     </style>
 
+    <color name="start_button_color">#00A600</color>
+    <color name="stop_button_color">#FF0000</color>
+
 </resources>

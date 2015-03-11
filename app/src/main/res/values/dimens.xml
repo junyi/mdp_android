@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="dirButtonWidth">100dp</dimen>
-    <dimen name="dirButtonHeight">50dp</dimen>
+    <dimen name="buttonWidth">110dp</dimen>
+    <dimen name="dirButtonHeight">100dp</dimen>
+    <dimen name="buttonEdgeBuffer">20dp</dimen>
+    <dimen name="buttonBottomBuffer">27dp</dimen>
 
 </resources>
