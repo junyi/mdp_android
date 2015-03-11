@@ -8,8 +8,9 @@
     <eat-comment/>
     <dimen name="buttonBottomBuffer">27dp</dimen>
     <dimen name="buttonEdgeBuffer">20dp</dimen>
+    <dimen name="buttonMargins">10dp</dimen>
     <dimen name="buttonWidth">110dp</dimen>
-    <dimen name="dirButtonHeight">100dp</dimen>
+    <dimen name="dirButtonHeight">75dp</dimen>
     <!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_connect">BlueTooth Connect</string>

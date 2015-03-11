@@ -68,22 +68,19 @@
         android:layout_width="@dimen/buttonWidth"
         android:layout_height="wrap_content"
         android:layout_above="@id/button_stop"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/buttonMargins"
         android:layout_marginLeft="@dimen/buttonEdgeBuffer"
         />
 
     <Button
         android:id="@+id/button_conf"
-        android:layout_marginBottom="@dimen/buttonBottomBuffer"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Configure"
         android:onClick="startPreferencePage"
-        android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/buttonEdgeBuffer"
-        android:layout_alignRight="@id/button_down"
-        android:layout_alignBottom="@id/button_down"
-        />
+        android:layout_alignBottom="@+id/button_stop"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/button_f2"
@@ -125,12 +122,12 @@
         android:id="@+id/toggleMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Auto"
         android:onClick="toggleMap"
         android:textOff="Manual"
 		android:textOn="Auto"
-        android:layout_above="@+id/toggleButton2"
-        android:layout_alignEnd="@+id/button_start" />
+        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
+        android:layout_above="@+id/buttonCoord"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/autoManual"
@@ -139,8 +136,9 @@
         android:layout_height="wrap_content"
         android:text="Update Map"
         android:onClick="updateMap"
-        android:layout_above="@+id/button_up"
-        android:layout_toEndOf="@+id/receivedMsg" />
+        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
+        android:layout_above="@+id/toggleMap"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/speechRec"
@@ -149,7 +147,7 @@
         android:text= "Speech"
         android:onClick="turnOnVoice"
         android:layout_above="@+id/button_conf"
-        android:layout_alignEnd="@+id/button_f2" />
+        android:layout_alignEnd="@+id/button_conf" />
 
     <ToggleButton
         android:id="@+id/toggleButton1"
@@ -168,16 +166,22 @@
         android:textOff="Gesture Off"
 		android:textOn="Gesture On"
 		android:onClick="turnGesture"
-        android:layout_above="@+id/button_left"
-        android:layout_alignStart="@+id/button3" />
+        android:layout_marginRight="@dimen/buttonEdgeBuffer"
+        android:layout_marginBottom="@dimen/buttonMargins"
+        android:layout_above="@+id/toggleButton1"
+        android:layout_alignParentEnd="true"
+        android:checked="false"
+        />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send XY"
-        android:id="@+id/button3"
+        android:id="@+id/buttonCoord"
         android:onClick="startCoordinatePage"
-        android:layout_below="@+id/toggleButton2"
-        android:layout_alignStart="@+id/button_start" />
+        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
+        android:layout_above="@id/button_start"
+        android:layout_marginBottom="@dimen/buttonMargins"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout><!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/layout/activity_main.xml -->

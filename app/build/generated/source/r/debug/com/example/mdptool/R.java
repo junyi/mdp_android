@@ -17,8 +17,9 @@ public final class R {
     public static final class dimen {
         public static final int buttonBottomBuffer=0x7f050000;
         public static final int buttonEdgeBuffer=0x7f050001;
-        public static final int buttonWidth=0x7f050002;
-        public static final int dirButtonHeight=0x7f050003;
+        public static final int buttonMargins=0x7f050002;
+        public static final int buttonWidth=0x7f050003;
+        public static final int dirButtonHeight=0x7f050004;
     }
     public static final class drawable {
         public static final int down=0x7f020000;
@@ -43,7 +44,7 @@ public final class R {
         public static final int autoManual=0x7f090013;
         public static final int button=0x7f090020;
         public static final int button2=0x7f09001f;
-        public static final int button3=0x7f090015;
+        public static final int buttonCoord=0x7f090012;
         public static final int button_conf=0x7f09000b;
         public static final int button_down=0x7f090005;
         public static final int button_f1=0x7f09000e;
@@ -72,7 +73,7 @@ public final class R {
         public static final int textView4=0x7f09001d;
         public static final int textView5=0x7f090021;
         public static final int toggleButton1=0x7f090014;
-        public static final int toggleButton2=0x7f090012;
+        public static final int toggleButton2=0x7f090015;
         public static final int toggleMap=0x7f090011;
     }
     public static final class layout {
