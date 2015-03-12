@@ -133,6 +133,18 @@
         android:layout_alignParentStart="true" />
 
     <Button
+        android:id="@+id/shortestPath"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shortest Path"
+        android:onClick="shortestPath"
+        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
+        android:layout_above="@+id/autoManual"
+        android:layout_marginBottom="@dimen/buttonMargins"
+        android:layout_alignParentStart="true" />
+
+    <Button
         android:id="@+id/speechRec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

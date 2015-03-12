@@ -20,7 +20,6 @@ public class SendCoordinates extends Activity {
         setContentView(R.layout.sendcordinates);
         if (ct == null)
             ct = MainActivity.ct;
-        00
     }
 
     public void resetBtn(View view) {

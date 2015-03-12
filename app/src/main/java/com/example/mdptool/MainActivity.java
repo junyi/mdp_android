@@ -29,7 +29,6 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -311,8 +310,14 @@ public class MainActivity extends Activity {
         ct.run();
     }
 
+    public void shortestPath(View view) {
+        if (ct != null) {
+            ct.write(Config.PC_EXPLORE.getBytes());
+        }
+    }
 
-    public void toggleStart (View view) {
+
+    public void toggleStart(View view) {
         boolean status = ((ToggleButton) view).isChecked();
         if (status) {
             if (ct != null) {
@@ -321,11 +326,11 @@ public class MainActivity extends Activity {
                 ct.write((Config.START_EXPLORE).getBytes());
             } else {
                 if (myToast != null) myToast.cancel();
-                myToast = Toast.makeText(this, R.string.no_device_msg , Toast.LENGTH_SHORT);
+                myToast = Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT);
                 myToast.show();
                 ((ToggleButton) view).setChecked(false);
             }
-         }
+        }
     }
 
     /*
@@ -345,6 +350,7 @@ public class MainActivity extends Activity {
         Intent newIntent1 = new Intent(this, SendCoordinates.class);
         this.startActivity(newIntent1);
     }
+
     public static byte[] concat(byte[] a, byte[] b) {
         int lengthA = a.length;
         int lengthB = b.length;
