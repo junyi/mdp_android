@@ -26,7 +26,6 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="mdptool" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.example.mdptool" />
   </component>
   <component name="ChangeListManager">
@@ -105,26 +104,26 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mdptool/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33157894" vertical-offset="775" max-vertical-offset="8245">
-              <caret line="87" column="57" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.45454547" vertical-offset="1405" max-vertical-offset="8262">
+              <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
               <folding>
                 <element signature="e#2646#4070#0" expanded="true" />
                 <element signature="e#4059#4060#0" expanded="true" />
-                <element signature="e#4101#5070#0" expanded="true" />
-                <element signature="e#5059#5060#0" expanded="true" />
-                <element signature="e#8798#9805#0" expanded="true" />
-                <element signature="e#9793#9794#0" expanded="true" />
-                <element signature="e#12117#12139#0" expanded="true" />
-                <element signature="e#13178#13179#0" expanded="true" />
-                <element signature="e#13228#13229#0" expanded="true" />
-                <element signature="e#13463#13485#0" expanded="true" />
-                <element signature="e#13788#13810#0" expanded="true" />
-                <element signature="e#14113#14135#0" expanded="true" />
-                <element signature="e#14440#14462#0" expanded="true" />
-                <element signature="e#15298#15299#0" expanded="true" />
-                <element signature="e#15335#15336#0" expanded="true" />
-                <element signature="e#16887#16888#0" expanded="true" />
-                <element signature="e#16923#16924#0" expanded="true" />
+                <element signature="e#4101#5110#0" expanded="true" />
+                <element signature="e#5099#5100#0" expanded="true" />
+                <element signature="e#8838#9845#0" expanded="true" />
+                <element signature="e#9833#9834#0" expanded="true" />
+                <element signature="e#12157#12179#0" expanded="true" />
+                <element signature="e#13218#13219#0" expanded="true" />
+                <element signature="e#13268#13269#0" expanded="true" />
+                <element signature="e#13503#13525#0" expanded="true" />
+                <element signature="e#13828#13850#0" expanded="true" />
+                <element signature="e#14153#14175#0" expanded="true" />
+                <element signature="e#14480#14502#0" expanded="true" />
+                <element signature="e#15338#15339#0" expanded="true" />
+                <element signature="e#15375#15376#0" expanded="true" />
+                <element signature="e#16927#16928#0" expanded="true" />
+                <element signature="e#16963#16964#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1487,12 +1486,12 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49601275" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49601275" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32980332" sideWeight="0.49920255" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.64752793" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1526,7 +1525,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/mdptool/MainActivity.java</url>
-          <line>313</line>
+          <line>314</line>
           <properties class="com.example.mdptool.MainActivity" method="toggleStart" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -1937,26 +1936,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mdptool/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33157894" vertical-offset="775" max-vertical-offset="8245">
-          <caret line="87" column="57" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.45454547" vertical-offset="1405" max-vertical-offset="8262">
+          <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
           <folding>
             <element signature="e#2646#4070#0" expanded="true" />
             <element signature="e#4059#4060#0" expanded="true" />
-            <element signature="e#4101#5070#0" expanded="true" />
-            <element signature="e#5059#5060#0" expanded="true" />
-            <element signature="e#8798#9805#0" expanded="true" />
-            <element signature="e#9793#9794#0" expanded="true" />
-            <element signature="e#12117#12139#0" expanded="true" />
-            <element signature="e#13178#13179#0" expanded="true" />
-            <element signature="e#13228#13229#0" expanded="true" />
-            <element signature="e#13463#13485#0" expanded="true" />
-            <element signature="e#13788#13810#0" expanded="true" />
-            <element signature="e#14113#14135#0" expanded="true" />
-            <element signature="e#14440#14462#0" expanded="true" />
-            <element signature="e#15298#15299#0" expanded="true" />
-            <element signature="e#15335#15336#0" expanded="true" />
-            <element signature="e#16887#16888#0" expanded="true" />
-            <element signature="e#16923#16924#0" expanded="true" />
+            <element signature="e#4101#5110#0" expanded="true" />
+            <element signature="e#5099#5100#0" expanded="true" />
+            <element signature="e#8838#9845#0" expanded="true" />
+            <element signature="e#9833#9834#0" expanded="true" />
+            <element signature="e#12157#12179#0" expanded="true" />
+            <element signature="e#13218#13219#0" expanded="true" />
+            <element signature="e#13268#13269#0" expanded="true" />
+            <element signature="e#13503#13525#0" expanded="true" />
+            <element signature="e#13828#13850#0" expanded="true" />
+            <element signature="e#14153#14175#0" expanded="true" />
+            <element signature="e#14480#14502#0" expanded="true" />
+            <element signature="e#15338#15339#0" expanded="true" />
+            <element signature="e#15375#15376#0" expanded="true" />
+            <element signature="e#16927#16928#0" expanded="true" />
+            <element signature="e#16963#16964#0" expanded="true" />
           </folding>
         </state>
       </provider>

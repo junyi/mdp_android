@@ -120,7 +120,8 @@ public class MainActivity extends Activity {
                     if (myToast != null) myToast.cancel();
                     myToast = Toast.makeText(MainActivity.this, "Bluetooth Disconnected", Toast.LENGTH_SHORT);
                     myToast.show();
-                    ct.cancel();
+                    if (ct != null)
+                        ct.cancel();
                     BluetoothConnectThread server = new BluetoothConnectThread(bluetoothItem);
                     server.start();
                 }
