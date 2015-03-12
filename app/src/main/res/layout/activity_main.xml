@@ -104,9 +104,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/toggleMap"
-        android:layout_alignLeft="@+id/toggleMap"
         android:layout_marginBottom="67dp"
-        android:text="" />
+        android:text=""
+        android:layout_alignStart="@+id/autoManual" />
 
     <ToggleButton
         android:id="@+id/toggleMap"

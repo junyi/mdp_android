@@ -18,13 +18,15 @@ public class BluetoothConnectThread extends Thread {
         BluetoothSocket tmp = null;
         
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        String macid = object.toString();
+//        String macid = object.toString();
         mmDevice = mBluetoothAdapter.getRemoteDevice(object.toString().substring(object.toString().length()-17)) ;
         // Get a BluetoothSocket to connect with the given BluetoothDevice
         try {
             // MY_UUID is the app's UUID string, also used by the server code
             tmp = mmDevice.createRfcommSocketToServiceRecord(BluetoothService.mdpUUID);
-        } catch (IOException e) { }
+        } catch (IOException e) {
+            Log.e("Bluetooth", "IO Exception!");
+        }
         mmSocket = tmp;
     }
  

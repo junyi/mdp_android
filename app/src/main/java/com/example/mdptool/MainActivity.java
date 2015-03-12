@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
                             char stat = string.charAt(4);
                             Log.d("char", "" + stat);
                             String robotCommand = Integer.toBinaryString((int) stat);
-                            int toPad = 6 - robotCommand.length();
+                            int toPad = Config.DISCRIPTOR_DISTANCE_BITLENGTH - robotCommand.length();
                             for (int i = 0; i < toPad; i++) {
                                 robotCommand = "0" + robotCommand;
                             }

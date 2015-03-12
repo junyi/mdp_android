@@ -87,15 +87,15 @@ public class MapDescriptor {
 		return encodedMap;
 	}
 
-	public void decode(String recievedString, boolean check) {
+	public void decode(String receivedString, boolean check) {
 		//String explorationState = "FFC07F80FF01FE03FFFFFFF3FFE7FFCFFF9C7F38FE71FCE3F87FF0FFE1FFC3FF87FF0E0E1C1F";
 		//String obstacleState = "00000100001C80000000001C0000080000060001C00000080000";
-		Log.d("exploration", recievedString);
-		String exploration = convertHexToBinary(recievedString.substring(0,76));
+		Log.d("exploration", receivedString);
+		String exploration = convertHexToBinary(receivedString.substring(0,76));
 		Log.d("exploration", exploration +" "+exploration.length());
 		String obstacle = "";
-		if(recievedString.length()>81){
-		obstacle = convertHexToBinary(recievedString.substring(76,(recievedString.length())));
+		if(receivedString.length()>81){
+		obstacle = convertHexToBinary(receivedString.substring(76,(receivedString.length())));
 		}
 		int explorationPosition = 2;
 		int obstaclePosition = 0;
@@ -119,22 +119,22 @@ public class MapDescriptor {
 			}
 		}
 		int index = 0;
-		if (recievedString.contains("WEST")){
+		if (receivedString.contains("WEST")){
 			fakeRobotPos[2] = 1;
-			index = recievedString.indexOf("WEST");
-		}else if(recievedString.contains("NORTH")){
+			index = receivedString.indexOf("WEST");
+		}else if(receivedString.contains("NORTH")){
 			fakeRobotPos[2] = 2;
-			index = recievedString.indexOf("NORTH");
-		}else if (recievedString.contains("EAST")){
+			index = receivedString.indexOf("NORTH");
+		}else if (receivedString.contains("EAST")){
 			fakeRobotPos[2] = 3;
-			index = recievedString.indexOf("EAST");
-		}else if(recievedString.contains("SOUTH")){
+			index = receivedString.indexOf("EAST");
+		}else if(receivedString.contains("SOUTH")){
 			fakeRobotPos[2] = 4;
-			index = recievedString.indexOf("SOUTH");
+			index = receivedString.indexOf("SOUTH");
 		}
 			
-		fakeRobotPos[0] = Integer.parseInt(recievedString.substring(index-4, index-2));
-		fakeRobotPos[1] = Integer.parseInt(recievedString.substring(index-2, index));
+		fakeRobotPos[0] = Integer.parseInt(receivedString.substring(index-4, index-2));
+		fakeRobotPos[1] = Integer.parseInt(receivedString.substring(index-2, index));
 		Log.d("robotpos", ""+fakeRobotPos[0]+" "+fakeRobotPos[1]);
 		
 		if(check){

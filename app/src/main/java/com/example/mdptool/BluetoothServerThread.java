@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
 import android.util.Log;
+import android.widget.Toast;
 
 public class BluetoothServerThread extends Thread{
     private final BluetoothServerSocket mmServerSocket;
@@ -20,7 +21,9 @@ public class BluetoothServerThread extends Thread{
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         try {
             tmp = mBluetoothAdapter.listenUsingRfcommWithServiceRecord("MDPAndroidController", BluetoothService.mdpUUID);
-        } catch (IOException e) { }
+        } catch (IOException e) {
+            Log.d("MDPBluetooth", "GG LIAO!");
+        }
         mmServerSocket = tmp;
 
 	}

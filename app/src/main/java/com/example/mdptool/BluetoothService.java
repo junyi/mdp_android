@@ -30,6 +30,7 @@ public class BluetoothService extends Activity {
 
     int REQUEST_ENABLE_BT = 1;
     int RESULT_ENABLE_BT = 0;
+
     BluetoothServerThread server;
     BluetoothConnectThread client;
     BluetoothAdapter mBluetoothAdapter;
