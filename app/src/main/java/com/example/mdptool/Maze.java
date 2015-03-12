@@ -102,12 +102,17 @@ public class Maze extends SurfaceView implements SurfaceHolder.Callback {
 	        	}else if(map[x][y] == 2){
 	        		rectColor.setColor(Color.BLACK);
 	        	}
+
+                //color start and goal area
 	            if(((x==0 || x==1 || x==2 ) && (y==0 || y==1 || y==2)) || ((x==14 || x==13 || x==12 ) && (y==19 || y==18 || y==17))){
 	            	rectColor.setColor(Color.GREEN);
 	            }
+	            /*
 	            if((x==6 || x==7 ||x ==8) && (y==8 || y==9 ||  y==10)){
+
 	            	rectColor.setColor(Color.BLUE);
 	            }
+                */
 	        	rectColor.setStyle(Paint.Style.FILL);
 	        	canvas.drawRect(rect, rectColor);
 	        	rectColor.setColor(Color.BLACK);

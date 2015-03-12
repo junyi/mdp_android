@@ -71,10 +71,10 @@ public class MainActivity extends Activity {
 
         toggle = (ToggleButton) findViewById(R.id.toggleMap);
         toggle.setChecked(true);
-        toggle.setVisibility(View.VISIBLE);
+        toggle.setVisibility(View.INVISIBLE);
 
         updateMap = (Button) findViewById(R.id.autoManual);
-        updateMap.setVisibility(View.VISIBLE);
+        updateMap.setVisibility(View.INVISIBLE);
 
         receivedMsg = (TextView) findViewById(R.id.receivedMsg);
         myMaze = (Maze) findViewById(R.id.maze);
@@ -317,7 +317,7 @@ public class MainActivity extends Activity {
             if (ct != null) {
                 myMaze.startMaze(mapDesc);
                 toggle.setVisibility(View.VISIBLE);
-                ct.write((Helper.convert(Config.START_EXPLORE)).getBytes());
+                ct.write((Config.START_EXPLORE).getBytes());
             } else {
                 if (myToast != null) myToast.cancel();
                 myToast = Toast.makeText(this, R.string.no_device_msg , Toast.LENGTH_SHORT);
