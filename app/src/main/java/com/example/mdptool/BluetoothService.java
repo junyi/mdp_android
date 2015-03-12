@@ -20,6 +20,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -37,6 +38,8 @@ public class BluetoothService extends Activity {
 
     BroadcastReceiver mReceiver;
 
+    private Toast myToast = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +52,9 @@ public class BluetoothService extends Activity {
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter == null) {
-            Toast.makeText(this, "Bluetooth is unavailable on this device.", Toast.LENGTH_SHORT).show();
+            if (myToast != null) myToast.cancel();
+            myToast = Toast.makeText(this, "Bluetooth is unavailable on this device.", Toast.LENGTH_SHORT);
+            myToast.show();
             finish();
         } else if (!mBluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
@@ -110,7 +115,6 @@ public class BluetoothService extends Activity {
                 }
             }
         };
-
     }
 
     protected void onResume() {
@@ -128,8 +132,16 @@ public class BluetoothService extends Activity {
     }
 
     public void startDiscovery(View view) {
-        mAvailDeviceArrayAdapter.clear();
-        mBluetoothAdapter.startDiscovery();
+        if (!mBluetoothAdapter.isEnabled()){
+            if (myToast != null) myToast.cancel();
+            myToast = Toast.makeText(this, "Enable Bluetooth to Scan", Toast.LENGTH_SHORT);
+            myToast.show();
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+        } else {
+            mAvailDeviceArrayAdapter.clear();
+            mBluetoothAdapter.startDiscovery();
+        }
     }
 
     @Override
@@ -137,7 +149,9 @@ public class BluetoothService extends Activity {
         // TODO Auto-generated method stub
         if (requestCode == REQUEST_ENABLE_BT) {
             if (mBluetoothAdapter.isEnabled()) {
-                Toast.makeText(this, "Bluetooth is enabled", Toast.LENGTH_SHORT).show();
+                if (myToast != null) myToast.cancel();
+                myToast = Toast.makeText(this, "Bluetooth is enabled", Toast.LENGTH_SHORT);
+                myToast.show();
                 //start listening server
                 server = new BluetoothServerThread();
                 server.start();
@@ -153,7 +167,9 @@ public class BluetoothService extends Activity {
                 }
 
             } else {
-                Toast.makeText(this, "Bluetooth is not enabled", Toast.LENGTH_SHORT).show();
+                if (myToast != null) myToast.cancel();
+                myToast = Toast.makeText(this, "Bluetooth is disabled", Toast.LENGTH_SHORT);
+                myToast.show();
             }
         }
     }
