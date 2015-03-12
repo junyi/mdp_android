@@ -60,6 +60,8 @@ public class MainActivity extends Activity {
     ToggleButton toggle;
     Button updateMap;
 
+    public static Toast myToast = null;
+
     static Object bluetoothItem;
 
     @Override
@@ -97,7 +99,9 @@ public class MainActivity extends Activity {
                             Log.d("decode", string);
                             mapDesc.decode(string.substring(4), toggle.isChecked());
                         } else {
-                            Toast.makeText(MainActivity.this, "WRONG COMMAND", Toast.LENGTH_LONG).show();
+                            if (myToast != null) myToast.cancel();
+                            myToast = Toast.makeText(MainActivity.this, "WRONG COMMAND", Toast.LENGTH_LONG);
+                            myToast.show();
                         }
                         break;
                 }
@@ -109,9 +113,13 @@ public class MainActivity extends Activity {
                 String action = intent.getAction();
                 // When discovery finds a device
                 if (action.equals(BluetoothDevice.ACTION_ACL_CONNECTED)) {
-                    Toast.makeText(MainActivity.this, "Bluetooth Connected", Toast.LENGTH_SHORT).show();
+                    if (myToast != null) myToast.cancel();
+                    myToast = Toast.makeText(MainActivity.this, "Bluetooth Connected", Toast.LENGTH_SHORT);
+                    myToast.show();
                 } else if (action.equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)) {
-                    Toast.makeText(MainActivity.this, "Bluetooth Disconnected", Toast.LENGTH_SHORT).show();
+                    if (myToast != null) myToast.cancel();
+                    myToast = Toast.makeText(MainActivity.this, "Bluetooth Disconnected", Toast.LENGTH_SHORT);
+                    myToast.show();
                     ct.cancel();
                     BluetoothConnectThread server = new BluetoothConnectThread(bluetoothItem);
                     server.start();
@@ -124,13 +132,17 @@ public class MainActivity extends Activity {
             @Override
             public void onReadyForSpeech(Bundle params) {
                 // TODO Auto-generated method stub
-                Toast.makeText(MainActivity.this, "Listening...", Toast.LENGTH_SHORT).show();
+                if (myToast != null) myToast.cancel();
+                myToast = Toast.makeText(MainActivity.this, "Listening...", Toast.LENGTH_SHORT);
+                myToast.show();
             }
 
             @Override
             public void onError(int error) {
                 // TODO Auto-generated method stub
-                Toast.makeText(MainActivity.this, "Error on Speech", Toast.LENGTH_SHORT).show();
+                if (myToast != null) myToast.cancel();
+                myToast = Toast.makeText(MainActivity.this, "Error on Speech", Toast.LENGTH_SHORT);
+                myToast.show();
             }
 
             @Override
@@ -152,7 +164,9 @@ public class MainActivity extends Activity {
                         break;
                     }
                 }
-                Toast.makeText(MainActivity.this, "Command not recognised", Toast.LENGTH_SHORT).show();
+                if (myToast != null) myToast.cancel();
+                myToast = Toast.makeText(MainActivity.this, "Command not recognised", Toast.LENGTH_SHORT);
+                myToast.show();
             }
 
             @Override
@@ -305,7 +319,9 @@ public class MainActivity extends Activity {
                 toggle.setVisibility(View.VISIBLE);
                 ct.write((Helper.convert(Config.START_EXPLORE)).getBytes());
             } else {
-                Toast.makeText(this, R.string.no_device_msg , Toast.LENGTH_SHORT).show();
+                if (myToast != null) myToast.cancel();
+                myToast = Toast.makeText(this, R.string.no_device_msg , Toast.LENGTH_SHORT);
+                myToast.show();
                 ((ToggleButton) view).setChecked(false);
             }
          }
@@ -345,29 +361,42 @@ public class MainActivity extends Activity {
     public void sendUp(View view) {
         if (ct != null)
             ct.write((Helper.convert(Config.UP)).getBytes());
-        else
-            Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT).show();
+        else {
+            if (myToast != null) myToast.cancel();
+            myToast = Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT);
+            myToast.show();
+        }
     }
 
     public void sendDown(View view) {
         if (ct != null)
             ct.write((Helper.convert(Config.DOWN)).getBytes());
-        else
-            Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT).show();
+        else {
+            if (myToast != null) myToast.cancel();
+            myToast = Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT);
+            myToast.show();
+        }
     }
 
     public void sendLeft(View view) {
         if (ct != null)
             ct.write((Helper.convert(Config.LEFT)).getBytes());
-        else
-            Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT).show();
+        else {
+            if (myToast != null) myToast.cancel();
+            myToast = Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT);
+            myToast.show();
+        }
     }
 
     public void sendRight(View view) {
         if (ct != null)
             ct.write((Helper.convert(Config.RIGHT)).getBytes());
-        else
-            Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT).show();
+        else {
+            if (myToast != null) myToast.cancel();
+            myToast = Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT);
+            myToast.show();
+
+        }
     }
 
     public void sendF1(View view) {
@@ -405,7 +434,9 @@ public class MainActivity extends Activity {
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, MainActivity.this.getPackageName());
         speechRecognizer.startListening(speechRecognizerIntent);
 
-        Toast.makeText(this, "Speech ready", Toast.LENGTH_SHORT).show();
+        if (myToast != null) myToast.cancel();
+        myToast = Toast.makeText(this, "Speech ready", Toast.LENGTH_SHORT);
+        myToast.show();
 
     }
 

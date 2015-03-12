@@ -45,7 +45,7 @@ public final class R {
     public static final class id {
         public static final int action_connect=0x7f090021;
         public static final int autoManual=0x7f090012;
-        public static final int button=0x7f09001f;
+        public static final int sendBtn =0x7f09001f;
         public static final int button2=0x7f09001e;
         public static final int buttonCoord=0x7f090011;
         public static final int button_conf=0x7f09000a;
