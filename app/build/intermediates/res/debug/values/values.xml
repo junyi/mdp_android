@@ -17,6 +17,7 @@
     <eat-comment/>
     <string name="action_connect">BlueTooth Connect</string>
     <string name="app_name">MazeBuster</string>
+    <string name="no_device_msg">No Device Connected</string>
     <string name="title_activity_bluetooth_service">Bluetooth Setup</string>
     <string name="title_activity_preference_page">Preferences</string>
     <!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/values/styles.xml -->

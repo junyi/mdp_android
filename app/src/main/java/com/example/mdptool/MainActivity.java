@@ -29,6 +29,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -69,6 +70,7 @@ public class MainActivity extends Activity {
         toggle = (ToggleButton) findViewById(R.id.toggleMap);
         toggle.setChecked(true);
         toggle.setVisibility(View.INVISIBLE);
+
         updateMap = (Button) findViewById(R.id.autoManual);
         updateMap.setVisibility(View.INVISIBLE);
 
@@ -122,13 +124,13 @@ public class MainActivity extends Activity {
             @Override
             public void onReadyForSpeech(Bundle params) {
                 // TODO Auto-generated method stub
-                Toast.makeText(MainActivity.this, "speech listening", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Listening...", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onError(int error) {
                 // TODO Auto-generated method stub
-                Toast.makeText(MainActivity.this, "Error on speech", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Error on Speech", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -294,11 +296,28 @@ public class MainActivity extends Activity {
         ct.run();
     }
 
+
+    public void toggleStart (View view) {
+        boolean status = ((ToggleButton) view).isChecked();
+        if (status) {
+            if (ct != null) {
+                myMaze.startMaze(mapDesc);
+                toggle.setVisibility(View.VISIBLE);
+                ct.write((Helper.convert(Config.START_EXPLORE)).getBytes());
+            } else {
+                Toast.makeText(this, R.string.no_device_msg , Toast.LENGTH_SHORT).show();
+                ((ToggleButton) view).setChecked(false);
+            }
+         }
+    }
+
+    /*
     public void startBtn(View view) {
         myMaze.startMaze(mapDesc);
         toggle.setVisibility(View.VISIBLE);
         ct.write((Helper.convert(Config.START_EXPLORE)).getBytes());
     }
+    */
 
     public void startPreferencePage(View view) {
         Intent newIntent = new Intent(this, PreferencePage.class);
@@ -327,28 +346,28 @@ public class MainActivity extends Activity {
         if (ct != null)
             ct.write((Helper.convert(Config.UP)).getBytes());
         else
-            Toast.makeText(this, "No device connected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT).show();
     }
 
     public void sendDown(View view) {
         if (ct != null)
             ct.write((Helper.convert(Config.DOWN)).getBytes());
         else
-            Toast.makeText(this, "No device connected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT).show();
     }
 
     public void sendLeft(View view) {
         if (ct != null)
             ct.write((Helper.convert(Config.LEFT)).getBytes());
         else
-            Toast.makeText(this, "No device connected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT).show();
     }
 
     public void sendRight(View view) {
         if (ct != null)
             ct.write((Helper.convert(Config.RIGHT)).getBytes());
         else
-            Toast.makeText(this, "No device connected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT).show();
     }
 
     public void sendF1(View view) {
@@ -386,7 +405,7 @@ public class MainActivity extends Activity {
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, MainActivity.this.getPackageName());
         speechRecognizer.startListening(speechRecognizerIntent);
 
-        Toast.makeText(this, "Speech is ready", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Speech ready", Toast.LENGTH_SHORT).show();
 
     }
 

@@ -4,4 +4,5 @@
     <string name="action_connect">BlueTooth Connect</string>
     <string name="title_activity_bluetooth_service">Bluetooth Setup</string>
     <string name="title_activity_preference_page">Preferences</string>
+    <string name="no_device_msg">No Device Connected</string>
 </resources>

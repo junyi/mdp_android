@@ -48,29 +48,19 @@
         android:onClick="sendLeft"
         />
 
-    <Button
-        android:background="@color/red"
-        android:text="Stop"
-        android:id="@+id/button_stop"
-        android:layout_width="@dimen/buttonWidth"
+    <ToggleButton
+        android:id="@+id/toggleStart"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="toggleStart"
+        android:textOff="Start"
+        android:textOn="Stop"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="@dimen/buttonEdgeBuffer"
         android:layout_alignLeft="@id/button_down"
-        android:layout_alignBottom="@id/button_down"
-        />
+        android:layout_alignBottom="@id/button_down" />
 
-    <Button
-        android:background="@color/green"
-        android:text="Start"
-        android:id="@+id/button_start"
-        android:onClick="startBtn"
-        android:layout_width="@dimen/buttonWidth"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/button_stop"
-        android:layout_marginBottom="@dimen/buttonMargins"
-        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
-        />
+
 
     <Button
         android:id="@+id/button_conf"
@@ -79,7 +69,7 @@
         android:text="Configure"
         android:onClick="startPreferencePage"
         android:layout_marginRight="@dimen/buttonEdgeBuffer"
-        android:layout_alignBottom="@+id/button_stop"
+        android:layout_alignBottom="@+id/button_down"
         android:layout_alignParentEnd="true" />
 
     <Button
@@ -180,7 +170,7 @@
         android:id="@+id/buttonCoord"
         android:onClick="startCoordinatePage"
         android:layout_marginLeft="@dimen/buttonEdgeBuffer"
-        android:layout_above="@id/button_start"
+        android:layout_above="@id/toggleStart"
         android:layout_marginBottom="@dimen/buttonMargins"
         android:layout_alignParentStart="true"/>
 
