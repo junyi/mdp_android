@@ -71,10 +71,10 @@ public class MainActivity extends Activity {
 
         toggle = (ToggleButton) findViewById(R.id.toggleMap);
         toggle.setChecked(true);
-        toggle.setVisibility(View.INVISIBLE);
+        toggle.setVisibility(View.VISIBLE);
 
         updateMap = (Button) findViewById(R.id.autoManual);
-        updateMap.setVisibility(View.INVISIBLE);
+        updateMap.setVisibility(View.VISIBLE);
 
         receivedMsg = (TextView) findViewById(R.id.receivedMsg);
         myMaze = (Maze) findViewById(R.id.maze);

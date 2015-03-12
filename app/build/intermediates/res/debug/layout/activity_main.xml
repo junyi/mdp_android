@@ -116,6 +116,7 @@
         android:textOff="Manual"
 		android:textOn="Auto"
         android:layout_marginLeft="@dimen/buttonEdgeBuffer"
+        android:layout_marginBottom="@dimen/buttonMargins"
         android:layout_above="@+id/buttonCoord"
         android:layout_alignParentStart="true" />
 
@@ -128,6 +129,7 @@
         android:onClick="updateMap"
         android:layout_marginLeft="@dimen/buttonEdgeBuffer"
         android:layout_above="@+id/toggleMap"
+        android:layout_marginBottom="@dimen/buttonMargins"
         android:layout_alignParentStart="true" />
 
     <Button
