@@ -2,8 +2,10 @@
 <resources>
     <!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/values/styles.xml -->
     <eat-comment/>
-    <color name="start_button_color">#00A600</color>
-    <color name="stop_button_color">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="green">#00A600</color>
+    <color name="red">#FF0000</color>
+    <color name="white">#ffffff</color>
     <!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="buttonBottomBuffer">27dp</dimen>
@@ -15,9 +17,8 @@
     <eat-comment/>
     <string name="action_connect">BlueTooth Connect</string>
     <string name="app_name">MazeBuster</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_bluetooth_service">BluetoothService</string>
-    <string name="title_activity_preference_page">PreferencePage</string>
+    <string name="title_activity_bluetooth_service">Bluetooth Setup</string>
+    <string name="title_activity_preference_page">Preferences</string>
     <!-- From: file:/C:/Users/YongLun/workspace/mdp_android/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">

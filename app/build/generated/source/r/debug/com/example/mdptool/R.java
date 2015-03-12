@@ -11,8 +11,10 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int start_button_color=0x7f040000;
-        public static final int stop_button_color=0x7f040001;
+        public static final int black=0x7f040000;
+        public static final int green=0x7f040001;
+        public static final int red=0x7f040002;
+        public static final int white=0x7f040003;
     }
     public static final class dimen {
         public static final int buttonBottomBuffer=0x7f050000;
@@ -22,22 +24,23 @@ public final class R {
         public static final int dirButtonHeight=0x7f050004;
     }
     public static final class drawable {
-        public static final int down=0x7f020000;
-        public static final int downselector=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int left=0x7f020003;
-        public static final int leftselector=0x7f020004;
-        public static final int logo1=0x7f020005;
-        public static final int logo2=0x7f020006;
-        public static final int pressdown=0x7f020007;
-        public static final int pressleft=0x7f020008;
-        public static final int pressright=0x7f020009;
-        public static final int pressup=0x7f02000a;
-        public static final int right=0x7f02000b;
-        public static final int rightselector=0x7f02000c;
-        public static final int robert=0x7f02000d;
-        public static final int up=0x7f02000e;
-        public static final int upselector=0x7f02000f;
+        public static final int bluetoothicon=0x7f020000;
+        public static final int down=0x7f020001;
+        public static final int downselector=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int left=0x7f020004;
+        public static final int leftselector=0x7f020005;
+        public static final int logo1=0x7f020006;
+        public static final int logo2=0x7f020007;
+        public static final int pressdown=0x7f020008;
+        public static final int pressleft=0x7f020009;
+        public static final int pressright=0x7f02000a;
+        public static final int pressup=0x7f02000b;
+        public static final int right=0x7f02000c;
+        public static final int rightselector=0x7f02000d;
+        public static final int robert=0x7f02000e;
+        public static final int up=0x7f02000f;
+        public static final int upselector=0x7f020010;
     }
     public static final class id {
         public static final int action_connect=0x7f090022;
@@ -89,9 +92,8 @@ public final class R {
     public static final class string {
         public static final int action_connect=0x7f060000;
         public static final int app_name=0x7f060001;
-        public static final int hello_world=0x7f060002;
-        public static final int title_activity_bluetooth_service=0x7f060003;
-        public static final int title_activity_preference_page=0x7f060004;
+        public static final int title_activity_bluetooth_service=0x7f060002;
+        public static final int title_activity_preference_page=0x7f060003;
     }
     public static final class style {
         /** 

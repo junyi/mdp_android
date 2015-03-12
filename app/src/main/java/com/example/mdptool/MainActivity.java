@@ -297,7 +297,7 @@ public class MainActivity extends Activity {
     public void startBtn(View view) {
         myMaze.startMaze(mapDesc);
         toggle.setVisibility(View.VISIBLE);
-        ct.write("Explore".getBytes());
+        ct.write((Helper.convert(Config.START_EXPLORE)).getBytes());
     }
 
     public void startPreferencePage(View view) {
@@ -322,20 +322,33 @@ public class MainActivity extends Activity {
         return concat("h".getBytes(), msg);
     }
 
+
     public void sendUp(View view) {
-        ct.write("hq".getBytes());
+        if (ct != null)
+            ct.write((Helper.convert(Config.UP)).getBytes());
+        else
+            Toast.makeText(this, "No device connected", Toast.LENGTH_SHORT).show();
     }
 
     public void sendDown(View view) {
-        ct.write("hA".getBytes());
+        if (ct != null)
+            ct.write((Helper.convert(Config.DOWN)).getBytes());
+        else
+            Toast.makeText(this, "No device connected", Toast.LENGTH_SHORT).show();
     }
 
     public void sendLeft(View view) {
-        ct.write("ha".getBytes());
+        if (ct != null)
+            ct.write((Helper.convert(Config.LEFT)).getBytes());
+        else
+            Toast.makeText(this, "No device connected", Toast.LENGTH_SHORT).show();
     }
 
     public void sendRight(View view) {
-        ct.write("hQ".getBytes());
+        if (ct != null)
+            ct.write((Helper.convert(Config.RIGHT)).getBytes());
+        else
+            Toast.makeText(this, "No device connected", Toast.LENGTH_SHORT).show();
     }
 
     public void sendF1(View view) {

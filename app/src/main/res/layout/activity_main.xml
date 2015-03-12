@@ -49,7 +49,7 @@
         />
 
     <Button
-        android:background="@color/stop_button_color"
+        android:background="@color/red"
         android:text="Stop"
         android:id="@+id/button_stop"
         android:layout_width="@dimen/buttonWidth"
@@ -61,7 +61,7 @@
         />
 
     <Button
-        android:background="@color/start_button_color"
+        android:background="@color/green"
         android:text="Start"
         android:id="@+id/button_start"
         android:onClick="startBtn"

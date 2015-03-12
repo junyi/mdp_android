@@ -2,6 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <!-- Connect, should appear as action button -->
     <item android:id="@+id/action_connect"
+          android:icon="@drawable/bluetoothicon"
           android:title="@string/action_connect"
           android:showAsAction="ifRoom" />
 
