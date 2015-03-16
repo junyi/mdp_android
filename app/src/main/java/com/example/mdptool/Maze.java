@@ -25,7 +25,7 @@ public class Maze extends SurfaceView implements SurfaceHolder.Callback {
 	
 	SurfaceHolder surfaceHolder;
 	MazeThread mazeThread = null;
-	
+
 	private Paint rectColor =  new Paint(Paint.ANTI_ALIAS_FLAG);
 	
 	public Maze(Context context) {
@@ -78,6 +78,34 @@ public class Maze extends SurfaceView implements SurfaceHolder.Callback {
                 // we will try it again and again...
             }
         }
+    }
+
+    public void pause(){
+        if(mazeThread == null){
+            return;
+        }
+        //Kill the background Thread
+        boolean retry = true;
+        mazeThread.setRunning(false);
+
+        while(retry){
+            try {
+                mazeThread.join();
+                retry = false;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void resume(MapDescriptor mapDesc){
+        surfaceHolder = getHolder();
+        getHolder().addCallback(this);
+
+//Create and start background Thread
+        mazeThread = new MazeThread(surfaceHolder, this, mapDesc);
+        mazeThread.setRunning(true);
+        mazeThread.start();
     }
 
 	protected void onDraw(Canvas canvas, int[][] map, int[] robotPos){

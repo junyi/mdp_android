@@ -1,2 +1,0 @@
-C:\Users\YongLun\workspace\mdp_android\app\build\intermediates\classes\debug
-C:\Users\YongLun\workspace\mdp_android\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-7c550faa2f9078fc194ac864155e00d37a496dff.jar

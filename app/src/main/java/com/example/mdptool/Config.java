@@ -3,7 +3,7 @@ package com.example.mdptool;
 public class Config {
     public static final int DISCRIPTOR_DISTANCE_BITLENGTH = 4;
     public static final String AUDRINO_CODE = "h"; // "h" refers to Arduino
-    public static final String START_EXPLORE = "h*";
+    public static final String START_EXPLORE = "h*\n";
     public static final String PC_coord = "pCoordinate\n";
     public static final String PC_EXPLORE = "pExplore\n";
 

@@ -262,6 +262,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        if (myMaze != null)
+            myMaze.resume(mapDesc);
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_ACL_CONNECTED);
         IntentFilter filter1 = new IntentFilter(BluetoothDevice.ACTION_ACL_DISCONNECTED);
         registerReceiver(bluetoothReceiver, filter);
@@ -281,6 +283,9 @@ public class MainActivity extends Activity {
         unregisterReceiver(bluetoothReceiver);
         sensorManager.unregisterListener(sensorEventListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER));
         gDetector = null;
+        if (myMaze != null)
+            myMaze.pause();
+
     }
 
     @Override
@@ -324,6 +329,8 @@ public class MainActivity extends Activity {
                 myMaze.startMaze(mapDesc);
                 toggle.setVisibility(View.VISIBLE);
                 ct.write((Config.START_EXPLORE).getBytes());
+//                ct.write((Config.PC_EXPLORE).getBytes());
+                updateMap(null);
             } else {
                 if (myToast != null) myToast.cancel();
                 myToast = Toast.makeText(this, R.string.no_device_msg, Toast.LENGTH_SHORT);

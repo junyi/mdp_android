@@ -1,191 +1,180 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
-
-
-    <ImageButton
-        android:id="@+id/button_down"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_width="@dimen/dirButtonHeight"
-        android:layout_height="@dimen/dirButtonHeight"
-        android:layout_marginBottom="@dimen/buttonBottomBuffer"
-        android:background="@drawable/downselector"
-        android:onClick="sendDown"
-        />
-
-    <ImageButton
-        android:id="@+id/button_up"
-        android:layout_width="@dimen/dirButtonHeight"
-        android:layout_height="@dimen/dirButtonHeight"
-        android:layout_above="@+id/button_left"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/upselector"
-        android:onClick="sendUp"
-        />
-
-    <ImageButton
-        android:id="@+id/button_right"
-        android:layout_width="@dimen/dirButtonHeight"
-        android:layout_height="@dimen/dirButtonHeight"
-        android:layout_above="@+id/button_down"
-        android:layout_marginBottom="0dp"
-        android:layout_toRightOf="@+id/button_down"
-        android:background="@drawable/rightselector"
-        android:onClick="sendRight"
-        />
-
-    <ImageButton
-        android:id="@+id/button_left"
-        android:layout_width="@dimen/dirButtonHeight"
-        android:layout_height="@dimen/dirButtonHeight"
-        android:layout_above="@+id/button_down"
-        android:layout_marginBottom="0dp"
-        android:layout_toLeftOf="@+id/button_down"
-        android:background="@drawable/leftselector"
-        android:onClick="sendLeft"
-        />
-
-    <ToggleButton
-        android:id="@+id/toggleStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="toggleStart"
-        android:textOff="Start"
-        android:textOn="Stop"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
-        android:layout_alignLeft="@id/button_down"
-        android:layout_alignBottom="@id/button_down" />
-
-
-
-    <Button
-        android:id="@+id/button_conf"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Configure"
-        android:onClick="startPreferencePage"
-        android:layout_marginRight="@dimen/buttonEdgeBuffer"
-        android:layout_alignBottom="@+id/button_down"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:id="@+id/button_f2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="F2"
-        android:onClick="sendF2"
-        android:layout_above="@+id/speechRec"
-        android:layout_alignEnd="@+id/button_conf" />
-
-    <Button
-        android:id="@+id/button_f1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button_f2"
-        android:layout_alignBottom="@+id/button_f2"
-        android:layout_toLeftOf="@+id/button_f2"
-        android:text="F1" 
-        android:onClick="sendF1"/>
+    android:orientation="vertical">
 
     <com.example.mdptool.Maze
         android:id="@+id/maze"
-        android:layout_width="600dp"
-        android:layout_height="400dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
 
-    <TextView
-        android:id="@+id/receivedMsg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/toggleMap"
-        android:layout_marginBottom="67dp"
-        android:text=""
-        android:layout_alignStart="@+id/autoManual" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <ToggleButton
-        android:id="@+id/toggleMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="toggleMap"
-        android:textOff="Manual"
-		android:textOn="Auto"
-        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
-        android:layout_marginBottom="@dimen/buttonMargins"
-        android:layout_above="@+id/buttonCoord"
-        android:layout_alignParentStart="true" />
 
-    <Button
-        android:id="@+id/autoManual"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Update Map"
-        android:onClick="updateMap"
-        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
-        android:layout_above="@+id/toggleMap"
-        android:layout_marginBottom="@dimen/buttonMargins"
-        android:layout_alignParentStart="true" />
+        <FrameLayout
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/shortestPath"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shortest Path"
-        android:onClick="shortestPath"
-        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
-        android:layout_above="@+id/autoManual"
-        android:layout_marginBottom="@dimen/buttonMargins"
-        android:layout_alignParentStart="true" />
+            <ImageButton
+                android:id="@+id/button_down"
+                android:layout_width="@dimen/dirButtonHeight"
+                android:layout_height="@dimen/dirButtonHeight"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@drawable/downselector"
+                android:onClick="sendDown" />
 
-    <Button
-        android:id="@+id/speechRec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text= "Speech"
-        android:onClick="turnOnVoice"
-        android:layout_above="@+id/button_conf"
-        android:layout_alignEnd="@+id/button_conf" />
+            <ImageButton
+                android:id="@+id/button_up"
+                android:layout_width="@dimen/dirButtonHeight"
+                android:layout_height="@dimen/dirButtonHeight"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@drawable/upselector"
+                android:onClick="sendUp" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOff="Tilt Off"
-		android:textOn="Tilt On"
-		android:onClick="turnTilt"
-        android:layout_above="@+id/button_f2"
-        android:layout_alignEnd="@+id/button_f2" />
+            <ImageButton
+                android:id="@+id/button_right"
+                android:layout_width="@dimen/dirButtonHeight"
+                android:layout_height="@dimen/dirButtonHeight"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/rightselector"
+                android:onClick="sendRight" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOff="Gesture Off"
-		android:textOn="Gesture On"
-		android:onClick="turnGesture"
-        android:layout_marginRight="@dimen/buttonEdgeBuffer"
-        android:layout_marginBottom="@dimen/buttonMargins"
-        android:layout_above="@+id/toggleButton1"
-        android:layout_alignParentEnd="true"
-        android:checked="false"
-        />
+            <ImageButton
+                android:id="@+id/button_left"
+                android:layout_width="@dimen/dirButtonHeight"
+                android:layout_height="@dimen/dirButtonHeight"
+                android:layout_gravity="left|center_vertical"
+                android:background="@drawable/leftselector"
+                android:onClick="sendLeft" />
+        </FrameLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send XY"
-        android:id="@+id/buttonCoord"
-        android:onClick="startCoordinatePage"
-        android:layout_marginLeft="@dimen/buttonEdgeBuffer"
-        android:layout_above="@id/toggleStart"
-        android:layout_marginBottom="@dimen/buttonMargins"
-        android:layout_alignParentStart="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/button_conf"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:onClick="startPreferencePage"
+                android:text="Configure" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/button_f1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="sendF1"
+                    android:text="F1" />
+
+                <Button
+                    android:id="@+id/button_f2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="sendF2"
+                    android:text="F2" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/speechRec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="turnOnVoice"
+                android:text="Speech" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:onClick="turnGesture"
+                android:textOff="Gesture Off"
+                android:textOn="Gesture On" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="turnTilt"
+                android:textOff="Tilt Off"
+                android:textOn="Tilt On" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <ToggleButton
+                android:id="@+id/toggleStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="toggleStart"
+                android:textOff="Start"
+                android:textOn="Stop" />
+
+            <Button
+                android:id="@+id/buttonCoord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="startCoordinatePage"
+                android:text="Send XY" />
+
+            <ToggleButton
+                android:id="@+id/toggleMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="toggleMap"
+                android:textOff="Manual"
+                android:textOn="Auto" />
+
+            <Button
+                android:id="@+id/shortestPath"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="shortestPath"
+                android:text="Shortest Path" />
+
+            <Button
+                android:id="@+id/autoManual"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="updateMap"
+                android:text="Update Map" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/receivedMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text=""
+            tools:text="Testing" />
+
+
+    </RelativeLayout>
+</LinearLayout>
